@@ -1,9 +1,22 @@
 import "./App.css";
 
-let language = "Javascript";
+function Header() {
+  return (
+    <header>
+      <h1>Emmanuel's Home</h1>
+    </header>
+  );
+}
 
 function App() {
-  return <h1>Hello {language.toLocaleUpperCase()}!</h1>;
+  return (
+    <div>
+      <Header />;
+      <main>
+        <h2>We are the best Home</h2>
+      </main>
+    </div>
+  );
 }
 
 export default App;
