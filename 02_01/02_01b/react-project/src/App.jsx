@@ -1,4 +1,4 @@
-import { useState, useReducer, use } from "react";
+import { useEffect, useReducer, use } from "react";
 import "./App.css";
 import Ato from "./images/Ato.jpg";
 
@@ -46,9 +46,11 @@ function Main({ dishes, openStatus, onStatus }) {
   );
 }
 function App() {
-  // const [status, setStatus] = useState(true);
   const [status, toggle] = useReducer((status) => !status, true);
 
+  useEffect(() => {
+    console.log(`The restaurant is ${status ? "open" : "closed"}`);
+  }, []);
   return (
     <div>
       <h1>The restaurant is currently {status ? "open" : "closed"}</h1>
