@@ -19,21 +19,26 @@ const dishObjects = items.map((dish, i) => ({
 
 function Main({ dishes }) {
   return (
-    <main>
-      <img src={Ato} height={200} alt="Image of Ato forson" />
-      <img
-        src="https://github.com/emmanuelbed.png"
-        height={800}
-        alt="Image of Ato forson"
-      />
-      <ul>
-        {dishes.map((dish) => (
-          <li key={dish.id} style={{ listStyleType: "none" }}>
-            {dish.title}
-          </li>
-        ))}
-      </ul>
-    </main>
+    <>
+      <div>
+        <h2>Welcome to this Home</h2>
+      </div>
+      <main>
+        <img src={Ato} height={200} alt="Image of Ato forson" />
+        <img
+          src="https://github.com/emmanuelbed.png"
+          height={800}
+          alt="Image of Ato forson"
+        />
+        <ul>
+          {dishes.map((dish) => (
+            <li key={dish.id} style={{ listStyleType: "none" }}>
+              {dish.title}
+            </li>
+          ))}
+        </ul>
+      </main>
+    </>
   );
 }
 function App() {
