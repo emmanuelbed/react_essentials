@@ -1,4 +1,5 @@
 import "./App.css";
+import Ato from "./images/Ato.jpg";
 
 function Header({ name, year }) {
   return (
@@ -18,13 +19,21 @@ const dishObjects = items.map((dish, i) => ({
 
 function Main({ dishes }) {
   return (
-    <ul>
-      {dishes.map((dish) => (
-        <li key={dish.id} style={{ listStyleType: "none" }}>
-          {dish.title}
-        </li>
-      ))}
-    </ul>
+    <main>
+      <img src={Ato} height={200} alt="Image of Ato forson" />
+      <img
+        src="https://github.com/emmanuelbed.png"
+        height={800}
+        alt="Image of Ato forson"
+      />
+      <ul>
+        {dishes.map((dish) => (
+          <li key={dish.id} style={{ listStyleType: "none" }}>
+            {dish.title}
+          </li>
+        ))}
+      </ul>
+    </main>
   );
 }
 function App() {
