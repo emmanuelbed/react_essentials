@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useReducer, use } from "react";
 import "./App.css";
 import Ato from "./images/Ato.jpg";
 
@@ -46,21 +46,16 @@ function Main({ dishes, openStatus, onStatus }) {
   );
 }
 function App() {
-  const [status, setStatus] = useState(true);
+  // const [status, setStatus] = useState(true);
+  const [status, toggle] = useReducer((status) => !status, true);
 
   return (
     <div>
       <h1>The restaurant is currently {status ? "open" : "closed"}</h1>
 
-      <button
-        onClick={() => {
-          setStatus(!status);
-        }}
-      >
-        {status ? "Close" : "Open"} Reataurant
-      </button>
+      <button onClick={toggle}>{status ? "Close" : "Open"} Reataurant</button>
       <Header name="Emmanuel" year={new Date().getFullYear()} />
-      <Main dishes={dishObjects} openStatus={status} onStatus={setStatus} />
+      <Main dishes={dishObjects} openStatus={status} onStatus={toggle} />
     </div>
   );
 }
