@@ -25,11 +25,7 @@ function Main({ dishes }) {
       </div>
       <main>
         <img src={Ato} height={200} alt="Image of Ato forson" />
-        <img
-          src="https://github.com/emmanuelbed.png"
-          height={800}
-          alt="Image of Ato forson"
-        />
+
         <ul>
           {dishes.map((dish) => (
             <li key={dish.id} style={{ listStyleType: "none" }}>
